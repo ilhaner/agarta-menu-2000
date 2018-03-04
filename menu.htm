@@ -1,0 +1,67 @@
+<html>
+<script language="javascript" src="_menu.js"></script>
+
+<body text="#FFFF00" bgcolor="#000099" link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<center><img SRC="resimler/_bir.jpg" height=102 width=102></center>
+<p>
+<form name="form1">
+<select name="list1" size="12" onChange="menu(document.form1.list1.options[document.form1.list1.selectedIndex].value)">
+<OPTION value="bos">-----------------
+<OPTION value="anasayfa.htm">Ana Sayfa
+<OPTION value="yenilikler.htm">Yenilikler
+<OPTION value="agarta.htm">Agarta Nedir?
+<OPTION value="bos">-----------------
+<OPTION value="m1">Alternatif Þifa
+<OPTION value="m2">Öðretiler
+<OPTION value="m3">Ruhsal Mesajlar
+<OPTION value="m4">Makaleler
+<OPTION value="bos">-----------------
+<OPTION value="kitaplar/index.html">KÝTAP ARÞÝVÝ
+<OPTION value="linkler.htm">LÝNKLER
+</SELECT>
+</form>
+
+<script>
+function menu(m)
+{
+if (m.search('htm')!= -1)
+	{
+	if (m.search('html')!= -1) {window.open(m,"_top");}
+	else {window.open(m,"sag");}
+	}
+else
+	{
+	if (document.form1.list1.options[document.form1.list1.selectedIndex].value != "bos")
+		{
+		var i=0;
+		mt="agarta";
+		if (m=="m0") { list_sayi=m0s;}
+		if (m=="m1") { list_sayi=m1s;}
+		if (m=="m2") { list_sayi=m2s;}
+		if (m=="m3") { list_sayi=m3s;}
+		if (m=="m4") { list_sayi=m4s;}
+		document.form1.list1.length =list_sayi;
+		while (mt != "son")
+			{
+			if (m=="m0") { mt=m0t[i]; mv=m0v[i];}
+			if (m=="m1") { mt=m1t[i]; mv=m1v[i];}
+			if (m=="m2") { mt=m2t[i]; mv=m2v[i];}
+			if (m=="m3") { mt=m3t[i]; mv=m3v[i];}
+			if (m=="m4") { mt=m4t[i]; mv=m4v[i];}
+			if (mt !="son")
+				{
+				document.form1.list1.options[i].text=mt;
+				document.form1.list1.options[i].value=mv;
+				}
+			i++;
+			}
+		}
+	}
+document.form1.list1.selectedIndex=0;
+}
+
+</script>
+<hr>
+<b><font size=+1><a href="http://www.anadolusiirleri.8m.com" target="_top">ÞÝÝR KÖÞESÝ</a></font></b>
+</body>
+</html>
